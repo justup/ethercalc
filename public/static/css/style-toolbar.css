@@ -1,0 +1,349 @@
+#apollo-toolbar-block {
+    padding: 0 44px 0 5px;
+    position: relative;
+    /*border-top: 1px solid #d9d9d9;*/
+    border-bottom: 1px solid #d9d9d9;
+    /*-webkit-box-shadow: inset 0 1px 0 0 #fff;*/
+    /*-moz-box-shadow: inset 0 1px 0 0 #fff;*/
+    /*box-shadow: inset 0 1px 0 0 #fff;*/
+    /*background-color: #f5f5f5;*/
+    background-color: #26A59A;
+/*    background-image: -webkit-linear-gradient(top,#f5f5f5,#eee);
+    background-image: -moz-linear-gradient(top,#f5f5f5,#eee);
+    background-image: -ms-linear-gradient(top,#f5f5f5,#eee);
+    background-image: -o-linear-gradient(top,#f5f5f5,#eee);
+    background-image: linear-gradient(top,#f5f5f5,#eee);*/
+    -webkit-user-select: none;
+}
+
+ul.apollo-toolbar,
+ul.apollo-toolbar ul {
+    display: none;
+    font-size: 14px;
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.toolbar-active{
+    display: block !important;
+}
+
+
+ul.apollo-toolbar > li {
+    float: left;
+    margin: 1px 1px 1px 1px;
+    cursor:pointer;
+    padding:0px 4px;
+}
+
+.selected{
+    background: #51CDC2;
+    /*border-radius: 5px;*/
+}
+
+
+ul.apollo-toolbar > li > i{
+    color:#FFF;
+}
+
+ul.apollo-toolbar > li > a {
+    /*display: block;*/
+    padding: 2px;
+    text-align: center;
+    min-width: 30px;
+    min-height: 30px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px solid transparent;
+}
+
+ul.apollo-toolbar > li:hover , 
+ul.apollo-toolbar > li.active{
+    background-color: #51CDC2;
+    border-radius: 5px;
+}
+
+/*ul.apollo-toolbar > li.active > a,
+
+*/
+ul.apollo-toolbar > li:hover > a {
+    /*border-color: #c6c6c6;*/
+    /*background-color: #f8f8f8;*/
+}
+ul.apollo-toolbar > li.selected > a,
+ul.apollo-toolbar > li.active > a {
+/*    border-color: #c6c6c6;
+    -webkit-box-shadow: inset 1px 1px 0 rgba(0,0,0,.1),inset 0 -1px 0 rgba(0,0,0,.07);
+    -moz-box-shadow: inset 1px 1px 0 rgba(0,0,0,.1),inset 0 -1px 0 rgba(0,0,0,.07);
+    box-shadow: inset 1px 1px 0 rgba(0,0,0,.1),inset 0 -1px 0 rgba(0,0,0,.07);
+    background-color: #eee;
+    background-image: -webkit-linear-gradient(top,#eee,#e0e0e0);
+    background-image: -moz-linear-gradient(top,#eee,#e0e0e0);
+    background-image: -ms-linear-gradient(top,#eee,#e0e0e0);
+    background-image: -o-linear-gradient(top,#eee,#e0e0e0);
+    background-image: linear-gradient(top,#eee,#e0e0e0);*/
+}
+ul.apollo-toolbar li a {
+    /*vertical-align: middle;*/
+    /*color: #333;*/
+    color: #fff;
+    text-decoration: none;
+    line-height: 35px;
+}
+/* 修正位置 */
+ul.apollo-toolbar > li > a i.fa{
+    vertical-align: middle;
+}
+ul.apollo-toolbar > li > a span{
+    /*line-height: 24px;*/
+    line-height: 35px;
+}
+/* 分隔線 */
+ul.apollo-toolbar > li.split {
+    width: 1px;
+    background-color: #1A8F85;
+    min-height: 24px;
+    margin-top: 7px;
+    padding: 0px;
+}
+ul.apollo-toolbar:after{
+    clear: both;
+    content: '';
+    display: block;
+}
+
+/* submenu */
+
+ul.apollo-toolbar > li ul {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #aaa;
+    -webkit-box-shadow: 0 2px 4px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 2px 4px rgba(0,0,0,.2);
+    box-shadow: 0 2px 4px rgba(0,0,0,.2);
+}
+ul.apollo-toolbar li ul li.split {
+    height: 1px;
+    background-color: #eee;
+    margin: 2px 0px;
+}
+ul.apollo-toolbar > li.active > ul {
+    display: block;
+    z-index: 9;
+}
+ul.apollo-toolbar > li > ul > li a {
+    padding: 4px 30px;
+    display: block;
+    color: #333;
+}
+ul.apollo-toolbar > li > ul > li a:hover {
+    background-color: #DFF2F0;
+}
+ul.apollo-toolbar > li > a > span.fa,
+ul.apollo-toolbar > li > a > span.glyphicon{
+    margin-left: 4px;
+    margin-right: 2px;
+    color: #FFF;
+}
+ul.apollo-toolbar ul li a > i.fa {
+    position: absolute;
+    left: 8px;
+    font-size: 16px;
+}
+ul.apollo-toolbar ul li a > i.glyphicon {
+    position: absolute;
+    left: 8px;
+    top: 6px;
+    font-size: 14px;
+}
+ul.apollo-toolbar > li > a > i.glyphicon {
+    vertical-align: middle;
+    height: 20px;
+    width: 20px;
+}
+ul.apollo-toolbar > li > a > i.glyphicon {
+    padding: 0 2px;
+}
+ul.apollo-toolbar ul.apollo-icon-group {
+    padding: 4px 5px;
+}
+
+ul.apollo-toolbar ul.apollo-icon-group li {
+    position: relative;
+    float: left;
+}
+ul.apollo-toolbar ul.apollo-icon-group li a {
+    height: 30px;
+    width: 30px;
+    padding: 4px;
+}
+ul.apollo-toolbar ul.apollo-icon-group li a:hover {
+    background-color: #DFF2F0;
+}
+ul.apollo-toolbar li.disabled > a ,  ul.apollo-toolbar li.disabled > i{
+    color: rgba(255, 255, 255, 0.5);
+    cursor: default;
+}
+
+#apollo-toolbar-font-family , #apollo-toolbar-font-family-format{
+    width: 80px;
+    display: block;
+    float: left;
+    text-align: left;
+    padding: 0px 6px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden !important;
+}
+#apollo-toolbar-font-size , #apollo-toolbar-font-size-format{
+    width: 40px;
+    display: block;
+    float: left;
+    text-align: left;
+    padding: 0px 6px;
+}
+
+ul.apollo-toolbar-merge > li > a {
+    padding: 4px 15px !important;
+}
+
+i.apollo-toolbar-border-settings {
+    background: url('../img/custom/border-all-s.svg') no-repeat;
+    left: 2px;
+    top: 0;
+}
+
+/*a.apollo-toolbar-dollar-value-format {
+    background: url('../img/custom/money_symbol.svg') no-repeat;
+    background-position: 3px 1px;
+}*/
+
+/*a.apollo-toolbar-percentage-value-format {
+    background: url('../img/custom/percent_symbol.svg') no-repeat;
+    background-position: center;
+}
+
+a.apollo-toolbar-decrese-decimal-value-format {
+    background: url('../img/custom/decrese_decimal_symbol.svg') no-repeat;
+    background-position: 2px 0px;
+}
+
+a.apollo-toolbar-increse-decimal-value-format {
+    background: url('../img/custom/increse_decimal_symbol.svg') no-repeat;
+    background-position: 2px -1px;
+}
+
+a.apollo-toolbar-set-value-format {
+    background: url('../img/custom/non-text_value_format.svg') no-repeat;
+    background-position: 1px 2px;
+}*/
+
+/*ul.apollo-icon-group i.apollo-toolbar-border-icon {*/
+
+#apollo-toolbar-border-color-li {
+    width: 40px;
+    text-align: center;
+    min-width: 30px;
+    min-height: 30px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px solid transparent;
+}
+
+ul.apollo-toolbar ul li a > i.apollo-toolbar-border-icon {
+    left: 2px;
+    top: 2px;
+    width: 20px;
+    height: 20px;
+    padding: 2px;
+    margin: 4px;
+}
+
+#apollo-toolbar-border-color-li a:hover {
+    background-color: transparent;
+}
+
+#apollo-toolbar-border-color-li:hover {
+    border-color: #c6c6c6;
+    background-color: #f8f8f8;
+}
+
+#apollo-toolbar-border-color-li:active,
+#apollo-toolbar-border-color-li.active {
+    border-color: #c6c6c6;
+    -webkit-box-shadow: inset 1px 1px 0 rgba(0,0,0,.1),inset 0 -1px 0 rgba(0,0,0,.07);
+    -moz-box-shadow: inset 1px 1px 0 rgba(0,0,0,.1),inset 0 -1px 0 rgba(0,0,0,.07);
+    box-shadow: inset 1px 1px 0 rgba(0,0,0,.1),inset 0 -1px 0 rgba(0,0,0,.07);
+    background-color: #eee;
+    background-image: -webkit-linear-gradient(top,#eee,#e0e0e0);
+    background-image: -moz-linear-gradient(top,#eee,#e0e0e0);
+    background-image: -ms-linear-gradient(top,#eee,#e0e0e0);
+    background-image: -o-linear-gradient(top,#eee,#e0e0e0);
+    background-image: linear-gradient(top,#eee,#e0e0e0);
+}
+
+#apollo-toolbar-border-color-li.active ul {
+    display: block;
+}
+
+#apollo-toolbar-border-color-li a > span {
+    position: absolute;
+    right: 4px;
+    color: #ccc;
+    line-height: 24px;
+}
+
+#apollo-toolbar-border-color-a > i {
+    top: -2px;
+    left: 0;
+}
+
+ul.apollo-icon-group i.apollo-toolbar-border-left {
+    background: url('../img/custom/border-left-s.svg') no-repeat;
+}
+
+ul.apollo-icon-group i.apollo-toolbar-border-top {
+    background: url('../img/custom/border-top-s.svg') no-repeat;
+}
+
+ul.apollo-icon-group i.apollo-toolbar-border-right {
+    background: url('../img/custom/border-right-s.svg') no-repeat;
+}
+
+ul.apollo-icon-group i.apollo-toolbar-border-bottom {
+    background: url('../img/custom/border-bottom-s.svg') no-repeat;
+}
+
+ul.apollo-icon-group i.apollo-toolbar-border-all {
+    background: url('../img/custom/border-all-s.svg') no-repeat;
+}
+
+ul.apollo-icon-group i.apollo-toolbar-border-none {
+    background: url('../img/custom/border-none-s.svg') no-repeat;
+}
+
+/*usage ref:https://github.com/FortAwesome/Font-Awesome/issues/2828*/
+/*utf-8 character ref: http://www.umsiko.co.za/links/specchar.html*/
+.fa-custom-math-sum:before {
+    font-weight: 700;
+    content: '\03a3';
+}
+
+i.apollo-toolbar-textwrap-autowrap {
+    /* License: Creative Commons (Attribution-Share Alike 3.0 Unported) (help for licenses) */
+    /* https://www.iconfinder.com/icons/352229/text_wrap_icon#size=20 */
+    background: url('../img/custom/wrap-text.png') no-repeat;
+    top: -2px;
+}
+
+
+/* Icons made by Freepik*/
+/* http://www.flaticon.com/authors/freepik */
+/* licensed by CC BY 3.0*/
+i.apollo-toolbar-paint-format {
+    background: url('../img/custom/paint-format.png') no-repeat;
+}

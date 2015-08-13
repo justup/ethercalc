@@ -1,0 +1,30 @@
+CACHE MANIFEST
+# Tue Jan 14 11:25:26 CST 2015
+
+CACHE:
+
+# initial page
+_start
+static/start.css
+static/jszip.js
+static/shim.js
+static/xlsx.js
+static/xlsxworker.js
+static/jquery.js
+static/dist/ods.js
+static/multi.js
+
+# pad page
+static/ethercalc.js
+socket.io/socket.io.js
+zappa/zappa.js
+player/broadcast.js
+player/graph.js
+player/main.js
+static/socialcalc.css
+static/index.css
+
+FALLBACK:
+
+NETWORK:
+*

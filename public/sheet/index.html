@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+
+    <title>雲盤試算表</title>
+
+    <link rel="shortcut icon" href="../static/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../static/socialcalc.css">
+    <link rel="stylesheet" type="text/css" href="../static/index.css">
+    <link rel="stylesheet" type="text/css" href="../static/vex.css">
+    <link rel="stylesheet" type="text/css" href="../static/vex-theme-flat-attack.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/zansa-fonts.css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/style-menubar.css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/style-ctxmenu.css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/style-toolbar.css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/style-comment.css" />
+
+    <script>
+
+        // for developer auto redirect /spreadsheet uri
+        var matches = window.location.href.match(/(.+\/\/)(.*)\/spreadsheet(\/[^_][^\/\?#]*\??.*$)/);
+        if (matches !== null && matches[2].match(/^docs\./) === null && matches[2].match(/^210\.203\.20\./) === null) {
+            window.location.href = matches[1] + matches[2] + matches[3];
+        }
+
+        window.location.pathname.match(/^.*\/([^_][^\/\?#]*)\??.*$/);
+        var fileId = RegExp.$1;
+        var SocialCalc = { _room: fileId };
+
+        window.addEventListener("message", function(it){
+            if (/"type"\s*:\s*"multi"/.test(it.data)) {
+                window.__MULTI__ = (function(){ try { return JSON.parse(it.data); } catch (e$) {} }());
+            }
+        }, false);
+
+    </script>
+
+    <script src="../static/js/Api/foxdocs-api.js"></script>
+    <script src="../static/ethercalc.js"></script>
+    <script src="./socket.io/socket.io.js"></script>
+    <script src="./zappa/zappa.js"></script>
+    <script src="./player/broadcast.js"></script>
+    <script src="./player/graph.js"></script>
+        
+    <link rel="prefetch" type="application/l10n" href="../l10n/locales.ini" />
+
+    <script src="../static/lib/require.js"></script>
+    <script>
+//      ETHERCALC_TOPBAR_ENABLED = true;
+        // make version
+        var VERSION = (new Date()).getTime();
+        require.config({
+            urlArgs: 'ver=' + VERSION,
+            paths: {
+                'Apollo': './static/js',
+                'API': './static/js/Api',
+                'Static': './static'
+            }
+        });
+        require(
+            [
+                'Apollo/App'
+            ],
+            function (app) {
+                // launch
+                app.main(SocialCalc, fileId);
+            }
+        );
+    </script>
+
+</head>
+<body onresize="if (typeof doresize != 'undefined') doresize();">
+
+  <div id="msg" style="position:absolute;right:15px;top: 8px; bottom: 80px; display: none">
+    <textarea id="msgtext" style="margin-top:10px;width:110px;height:100%;"></textarea><br>
+    <form id="msgform">
+        <input type="text" id="msgout" name="msgout" style="width: 110px">
+        <br>
+        <input type="submit" style="font-size:x-small;" value="Add a line" onclick="val = document.getElementById('msgout').value; if (/\S/.test(val)) {SocialCalc.Callbacks.broadcast('chat', {msg: val}); addmsg(val, false); document.getElementById('msgout').value = ''}; return false"><br>
+    </form>
+  </div> <!-- div#msg -->
+
+  <div id="tableeditor"></div><!-- #tableeditor -->
+
+  <div id="screen-overlay" style="display: none;"></div>
+
+  <div id="init-ldg" style="display: none;"></div>
+
+  <div id="link-editor" style="display: none;" class="apollo-dialog apollo-link-dialog"></div>
+
+  <div id="link-info" style="display: none;" class="apollo-dialog apollo-link-info"></div>
+
+  <div id="apollo-search-and-replace-dialog" style="display: none; z-index: 1005; outline: none;" class="apollo-dialog apollo-search-and-replace-dialog" tabindex="1000"></div>
+
+</body>
+</html>

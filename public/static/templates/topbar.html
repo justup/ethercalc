@@ -1,0 +1,484 @@
+
+<section class="sheet-topbar disabled" id="apollo-topbar" data-header-templ>
+
+    <!-- <div id="apollo-logo-block"><div class="glyphicon glyphicon-list-alt"></div></div> -->
+
+<!--     <div id="apollo-button-block">
+        <button id="apollo-button-login" class="dialog-confirm" data-l10n-id="apollo-login">登入</button>
+        <button id="apollo-button-logout" class="dialog-confirm" data-l10n-id="apollo-logout">登出</button>
+    </div> -->
+
+    <div id="apollo-title-block">
+        
+        <a id="apollo-move-file-btn"><i data-icon = "b"></i></a>
+        <!-- <a id="apollo-move-file-btn"><i class="fa fa-folder"></i></a> -->
+        <a id="apollo-favorite-btn"><i data-icon ="c"></i></a>
+        <a id="apollo-title-button">雲盤試算表</a>
+        <!-- <a id="apollo-favorite-btn"><i class="fa fa-star-o"></i></a>
+        <a id="apollo-move-file-btn"><i class="fa fa-folder"></i></a> -->
+        
+        <div id="apollo-button-block">
+            <button id="apollo-button-login" class="dialog-confirm-simple" data-l10n-id="apollo-login">登入</button>
+            <button id="apollo-button-logout" class="dialog-confirm-simple" data-l10n-id="apollo-logout">登出</button>
+        </div>
+
+        <div class = "on-line-panel">
+            <span id="current-online-user-container"></span>
+        </div>
+
+    </div>
+
+    <!--
+    選單 A Tag Class, ID 命名規範：
+     1) 如果有對應的 Command 就採用 apollo-menubar-cmd-{命令名稱}, ex: 複製 apollo-menubar-cmd-copy
+     2) 如果沒有對應的 Command 就自行命名, ex: 分享設定 apollo-menubar-share-window
+    -->
+    <div id="apollo-menubar-block">
+        <ul class="apollo-menubar">
+            <li class='item-main' data-toolbar-change="files"><a data-l10n-id="menu-file">檔案</a></li>
+            <li class='item-main active' data-toolbar-change="common"><a data-l10n-id="menu-usually">常用</a></li>
+            <li class='item-main' data-toolbar-change="edit"><a data-l10n-id="menu-edit">編輯</a></li>
+            <li class='item-main' data-toolbar-change="view"><a data-l10n-id="menu-view">檢視</a></li>
+            <li class='item-main' data-toolbar-change="insert"><a data-l10n-id="menu-insert">插入</a></li>
+            <li class='item-main' data-toolbar-change="format"><a data-l10n-id="menu-format">格式</a></li>
+            <li class="hidden-xs item-main" data-toolbar-change="help"><a data-l10n-id="menu-help">說明</a></li>
+        </ul>
+    </div>
+
+    <div id="apollo-toolbar-block">
+
+        <!-- 檔案 -->
+        <ul class="apollo-toolbar" id = "apollo-toolbar-files">
+            <!-- 新增 -->
+            <li class="visible-sm visible-md visible-lg" id="apollo-menubar-new">
+                <i class="fa fa-file-o"></i>
+                <a data-l10n-id="m-f-new">新增</a>
+                <ul>
+                    <li><a id="apollo-menubar-addexcel" data-l10n-id="m-f-n-spreadsheet">試算表</a></li>
+                </ul>
+            </li>
+            <!-- 開啟 -->
+            <li class="visible-sm visible-md visible-lg"  id="apollo-menubar-open" title ="Ctrl+O">
+                <i class="fa fa-folder-open-o"></i>
+                <a data-l10n-id="m-f-open">開啟</a>
+            </li>
+            <!-- 重新命名 -->
+            <li class="visible-sm visible-md visible-lg" id = "apollo-menubar-rename">
+                <i class="fa fa-pencil"></i>
+                <a data-l10n-id="m-f-rename">重新命名</a>
+            </li>
+            <!-- 建立副本 -->
+            <li class="visible-sm visible-md visible-lg" id="apollo-menubar-copy">
+                <i class="fa fa-clipboard"></i>
+                <a data-l10n-id="m-f-makecopy">建立副本</a>
+            </li>
+            <!-- 移到資料夾 -->
+             <li class="visible-sm visible-md visible-lg" id="apollo-menubar-movedir">
+                <i class="fa fa-folder"></i>
+                <a data-l10n-id="m-f-move">移到資料夾</a>
+            </li>
+            <!-- 移至垃圾桶 -->
+             <li class="visible-sm visible-md visible-lg" id="apollo-menubar-remove">
+                <i class="fa fa-trash"></i>
+                <a data-l10n-id="m-f-trash">移至垃圾桶</a> 
+            </li>
+            <!-- 匯入 -->
+             <li class="visible-sm visible-md visible-lg" id="apollo-menubar-import">
+                <i class="fa fa-sign-in"></i>
+                <a data-l10n-id="m-f-import">匯入</a>       
+            </li>
+            <!-- 下載格式 -->
+            <li class="visible-sm visible-md visible-lg">
+                <i class="fa fa-download"></i>
+                <a data-l10n-id="m-f-download">下載格式</a>
+                <ul>
+                    <li><a id="apollo-menubar-excel-dl" data-l10n-id="m-f-d-xlsx">Excel 文件</a></li>
+                    <li><a id="apollo-menubar-csv-dl" data-l10n-id="m-f-d-csv">CSV 文件</a></li>
+                    <li><a id="apollo-menubar-html-dl" data-l10n-id="m-f-d-html">HTML 文件</a></li>
+                </ul>
+            </li>
+
+        </ul>
+
+        <!-- 常用 -->
+        <ul class="apollo-toolbar toolbar-active" id = "apollo-toolbar-common">
+            <li class="visible-sm visible-md visible-lg apollo-cmd-undo" id='apollo-toolbar-cmd-undo'><a><i class="fa fa-undo"></i></a></li>
+            <li class="visible-sm visible-md visible-lg apollo-cmd-redo" id='apollo-toolbar-cmd-redo'><a><i class="fa fa-repeat"></i></a></li>
+            <li class="visible-sm visible-md visible-lg"><a id='apollo-toolbar-paint-format'><i data-icon="g"></i></a></li>
+            <li class="visible-sm visible-md visible-lg split"></li>
+            <li class="visible-lg"><a data-icon = '"' class="apollo-toolbar-dollar-value-format apollo-bigger-data-icon-temp"><i></i></a></li>
+            <li class="visible-lg"><a data-icon = "$" class="apollo-toolbar-percentage-value-format apollo-bigger-data-icon-temp"><i></i></a></li>
+            <li class="visible-lg"><a data-icon = "%" class="apollo-toolbar-decrese-decimal-value-format apollo-bigger-data-icon-temp"><i></i></a></li>
+            <li class="visible-lg"><a data-icon = "&" class="apollo-toolbar-increse-decimal-value-format apollo-bigger-data-icon-temp"><i></i></a></li>
+            <li class="visible-lg"><a data-icon = "#" class="apollo-toolbar-set-value-format apollo-bigger-data-icon-temp"></i></a></li>
+            <li class="visible-lg split"></li>
+            <li class="hidden-xs"><a><span id="apollo-toolbar-font-family">Arial</span></a>
+                <ul class="apollo-font-family">
+                    <li><a style="font-family: arial;"><i class="fa fa-check"></i>Arial</a></li>
+                    <li><a style="font-family: 'Times New Roman';">Times New Roman</a></li>
+                    <li><a style="font-family: 'Courier New';">Courier New</a></li>
+                    <li><a style="font-family: Georgia;">Georgia</a></li>
+                    <li><a style="font-family: 'Trebuchet MS';">Trebuchet MS</a></li>
+                    <li><a style="font-family: Verdana;">Verdana</a></li>
+                    <li><a style="font-family: '新細明體';">新細明體</a></li>
+                    <li><a style="font-family: '細明體';">細明體</a></li>
+                </ul>
+            </li>
+            <li class="hidden-xs split"></li>
+            <li class="hidden-xs"><a><span id="apollo-toolbar-font-size">8</span></a>
+                <ul class="apollo-font-size">
+                    <li><a>6</a></li>
+                    <li><a>7</a></li>
+                    <li><a>8</a></li>
+                    <li><a>9</a></li>
+                    <li><a>10</a></li>
+                    <li><a>11</a></li>
+                    <li><a>12</a></li>
+                    <li><a>14</a></li>
+                    <li><a>18</a></li>
+                    <li><a>24</a></li>
+                    <li><a>36</a></li>
+                </ul>
+            </li>
+            <li class="hidden-xs split"></li>
+            <li class="toggle"><a class="apollo-bold"><i data-icon ="f"></i></a></li>
+            <li class="toggle"><a class="apollo-italic"><i data-icon="h"></i></a></li>
+            <li class="toggle"><a class='apollo-strike'><i data-icon="H"></i></a></li>
+            <li><a><i data-icon="I" id="apollo-toolbar-text-color-li"></i></a>
+                <ul id="apollo-toolbar-text-color-ul">
+                </ul>
+            </li>
+            <li class="split"></li>
+            <li><a><i data-icon="L" id="apollo-toolbar-background-color-li"></i></a>
+                <ul id="apollo-toolbar-background-color-ul">
+                </ul>
+            </li>
+
+            <li><a><i data-icon="j"></i></a>
+                <ul class="apollo-icon-group">
+                    <li><a id="apollo-toolbar-border-left" title="左邊框"><i class="glyphicon apollo-toolbar-border-icon apollo-toolbar-border-left"></i></a></li>
+                    <li><a id="apollo-toolbar-border-top" title="上邊框"><i class="glyphicon apollo-toolbar-border-icon apollo-toolbar-border-top"></i></a></li>
+                    <li><a id="apollo-toolbar-border-right" title="右邊框"><i class="glyphicon apollo-toolbar-border-icon apollo-toolbar-border-right"></i></a></li>
+                    <li><a id="apollo-toolbar-border-bottom" title="下邊框"><i class="glyphicon apollo-toolbar-border-icon apollo-toolbar-border-bottom"></i></a></li>
+                    <li><a id="apollo-toolbar-border-all" title="全邊框"><i class="glyphicon apollo-toolbar-border-icon apollo-toolbar-border-all"></i></a></li>
+                    <li><a id="apollo-toolbar-border-none" title="無邊框"><i class="glyphicon apollo-toolbar-border-icon apollo-toolbar-border-none"></i></a></li>
+                    <li id="apollo-toolbar-border-color-li">
+                        <a id="apollo-toolbar-border-color-a" title="邊框顏色"><i class="apollo-toolbar-border-icon fa fa-pencil"></i><span class="fa fa-caret-down"></span></a>
+                        <ul id='apollo-toolbar-border-color-ul' style="position: fixed;">
+                        </ul>
+                    </li>
+               
+                </ul>
+            </li>
+            <li><a id="apollo-toolbar-merge"><i class="glyphicon glyphicon-unchecked"></i></a>
+                <ul class="apollo-toolbar-merge">
+                    <li><a class="apollo-merge-all" data-l10n-id="m-f-merge">全部合併</a></li>
+                    <li><a class="apollo-merge-horizontal" data-l10n-id="m-f-m-h">水平合併</a></li>
+                    <li><a class="apollo-merge-vertical" data-l10n-id="m-f-m-v">垂直合併</a></li>
+                    <li><a class="apollo-unmerge" data-l10n-id="m-f-m-unmerge">取消合併</a></li>
+                </ul>
+            </li>
+            <li class="split"></li>
+            <li><a id="apollo-toolbar-align"><i class="glyphicon glyphicon-align-left"></i></a>
+                <ul class="apollo-icon-group">
+                    <li><a id="apollo-toolbar-align-left"><i class="glyphicon glyphicon-align-left"></i></a></li>
+                    <li><a id="apollo-toolbar-align-center"><i class="glyphicon glyphicon-align-center"></i></a></li>
+                    <li><a id="apollo-toolbar-align-right"><i class="glyphicon glyphicon-align-right"></i></a></li>
+                </ul>
+            </li>
+            <li><a id="apollo-toolbar-vertical"><i class="glyphicon glyphicon-object-align-horizontal"></i></a>
+                <ul class="apollo-icon-group">
+                    <li><a id="apollo-toolbar-vertical-top"><i class="glyphicon glyphicon-object-align-top"></i></a></li>
+                    <li><a id="apollo-toolbar-vertical-middle"><i class="glyphicon glyphicon-object-align-horizontal"></i></a></li>
+                    <li><a id="apollo-toolbar-vertical-bottom"><i class="glyphicon glyphicon-object-align-bottom"></i></a></li>
+                </ul>
+            </li>
+            <li><a><i class="glyphicon glyphicon-object-align-vertical"></i></a></li>
+            <li><a id="apollo-toolbar-textwrap-autowrap"><i class = "toolbar-textwrap-auto-warp" data-icon ="K"></i></a></li>
+            <li class="visible-md visible-lg split"></li>
+            <li class="visible-md visible-lg"><a id="apollo-toolbar-insert-link"><i class="fa fa-link"></i></a></li>
+            <li class="visible-md visible-lg"><a id="apollo-toolbar-insert-note"><i class="glyphicon glyphicon-comment"></i></a></li>
+            <li class="visible-md visible-lg"><a><i class="fa fa-custom-math-sum fa-lg"></i></a>
+                <ul>
+                    <li><a id="apollo-toolbar-insert-formulasum">SUM</a></li>
+                    <li><a id="apollo-toolbar-insert-formulaaverage">AVERAGE</a></li>
+                    <li><a id="apollo-toolbar-insert-formulacount">COUNT</a></li>
+                    <li><a id="apollo-toolbar-insert-formulamax">MAX</a></li>
+                    <li><a id="apollo-toolbar-insert-formulamin">MIN</a></li>
+                    <li class="split"></li>
+                    <li><a id="apollo-toolbar-insert-formulas" data-l10n-id="m-i-f-more">更多函式...</a></li>
+                </ul>
+            </li>
+        </ul>
+        
+        <!-- 編輯 -->
+        <ul class="apollo-toolbar" id = "apollo-toolbar-edit">
+            <!-- 復原 -->
+            <li class="visible-sm visible-md visible-lg apollo-cmd-undo" id="apollo-menubar-cmd-undo" title ="Ctrl+Z">
+                <i class="fa fa-undo"></i>
+                <a data-l10n-id="m-e-undo">復原</a>
+            </li>
+            <!-- 取消復原 -->
+            <li class="visible-sm visible-md visible-lg apollo-cmd-redo" id="apollo-menubar-cmd-redo">
+                <i class="fa fa-repeat"></i>
+                <a data-l10n-id="m-e-redo">取消復原</a>
+            </li>
+            
+            <li class="split"></li>
+
+            <!-- 剪下 -->
+            <li class="visible-sm visible-md visible-lg" id="apollo-menubar-cmd-cut" title="Ctrl+X">
+                <i class="fa fa-scissors"></i>
+                <a data-l10n-id="m-e-cut">剪下</a>
+            </li>
+            <!-- 複製 -->
+            <li class="visible-sm visible-md visible-lg" id="apollo-menubar-cmd-copy" title="Ctrl+C">
+                <i class="fa fa-files-o"></i>
+                <a data-l10n-id="m-e-copy">複製</a> 
+            </li>
+            <!-- 貼上 -->
+            <li class="visible-sm visible-md visible-lg" id="apollo-menubar-cmd-paste" title="Ctrl+V">
+                <i class="fa fa-clipboard"></i>
+                <a data-l10n-id="m-e-paste">貼上</a>
+            </li>
+            <!-- 選擇性貼上 -->
+            <li class="visible-sm visible-md visible-lg">
+                <i class="fa fa-clipboard"></i>
+                <a data-l10n-id="m-e-pastesp">選擇性貼上</a>
+                <ul>
+                    <li><a id="apollo-menubar-pastevalue" data-l10n-id="m-e-ps-pvo">僅貼上<strong>值</strong></a></li>
+                    <li><a id="apollo-menubar-cmd-pasteformat" data-l10n-id="m-e-ps-pfo">僅貼上<strong>格式</strong></a></li>
+                    <li><a id="apollo-menubar-cmd-pasteformula" data-l10n-id="m-e-ps-pflo">僅貼上<strong>公式</strong></a></li>
+                    <li><a id="apollo-menubar-pastexborder" data-l10n-id="m-e-ps-paeb">貼上全部但<strong>邊框除外</strong></a></li>
+                </ul>
+            </li>
+
+            <li class="visible-lg split"></li>
+
+            <!-- 尋找與取代 -->
+            <li class="visible-sm visible-md visible-lg" id="apollo-menubar-search-and-replace" title="Ctrl+H">
+                <i class="fa fa-search"></i>
+                <a data-l10n-id="m-e-fr">尋找與取代</a>
+            </li>
+
+            <li class="visible-lg split"></li>
+
+            <!-- 刪除 -->
+            <li class="visible-sm visible-md visible-lg">
+                <i class="fa fa-times-circle"></i>
+                <a data-l10n-id="m-e-dv">刪除</a>
+                <ul>
+                    <li><a id="apollo-menubar-empty-value" data-l10n-id="m-e-dv">刪除值</a></li>
+                    <li><a id="apollo-menubar-cmd-deleterow" data-l10n-id="m-e-dr">刪除第 <strong>X</strong> 列</a></li>
+                    <li><a id="apollo-menubar-cmd-deletecol" data-l10n-id="m-e-dc">刪除第 <strong>X</strong> 欄</a></li>
+                </ul>
+            </li>
+
+            <li class="visible-lg split"></li>
+
+            <!-- 清除備註 -->
+            <li class="visible-sm visible-md visible-lg"  id="apollo-menubar-clear-note">
+                <i class="fa fa-warning"></i>
+                <a data-l10n-id="m-e-cn">清除備註</a>
+            </li>
+            <li class="visible-lg split"></li>
+        </ul>
+
+        <!-- 檢視 -->
+        <ul class="apollo-toolbar" id = "apollo-toolbar-view">
+            <!-- 凍結 -->
+            <li class="visible-sm visible-md visible-lg">
+                <i class="fa fa-lock"></i>
+                <a data-l10n-id="m-v-freeze">凍結</a>
+                <ul>
+                    <li><a class="apollo-menubar-rowpane" data-num="0" data-l10n-id="m-v-f-0r">0&nbsp;列</a></li>
+                    <li><a class="apollo-menubar-rowpane" data-num="1" data-l10n-id="m-v-f-1r">1&nbsp;列</a></li>
+                    <li><a class="apollo-menubar-rowpane" data-num="2" data-l10n-id="m-v-f-2r">2&nbsp;列</a></li>
+                    <li><a class="apollo-menubar-rowpane n-X" data-num="0" data-l10n-id="m-v-f-nr">直到目前所在的列&nbsp;(<b>0</b>)</a></li>
+                    <li class="split"></li>
+                    <li><a class="apollo-menubar-colpane" data-num="0" data-l10n-id="m-v-f-0c">0&nbsp;欄</a></li>
+                    <li><a class="apollo-menubar-colpane" data-num="1" data-l10n-id="m-v-f-1c">1&nbsp;欄</a></li>
+                    <li><a class="apollo-menubar-colpane" data-num="2" data-l10n-id="m-v-f-2c">2&nbsp;欄</a></li>
+                    <li><a class="apollo-menubar-colpane n-X" data-num="0" data-l10n-id="m-v-f-nc">直到目前所在的欄&nbsp;(<b>0</b>)</a></li>
+                </ul>
+            </li>   
+        </ul>
+
+        <!-- 插入 -->
+        <ul class="apollo-toolbar" id = "apollo-toolbar-insert">
+            <!-- 向上插入1列 -->
+            <li class="visible-sm visible-md visible-lg"  id="apollo-menubar-insertrow-up">
+                <i data-icon="Z"></i>
+                <a data-l10n-id="m-i-r-up">向<b>上</b>插入&nbsp;1&nbsp;列</a>
+            </li>
+            <!-- 向下插入1列 -->
+            <li class="visible-sm visible-md visible-lg" id="apollo-menubar-insertrow-down">
+                <i data-icon="X"></i>
+                <a data-l10n-id="m-i-r-down">向<b>下</b>插入&nbsp;1&nbsp;列</a>
+            </li>
+            <!-- 向左插入1欄 -->
+            <li class="visible-sm visible-md visible-lg" id="apollo-menubar-insertcol-left">
+                <i data-icon="W"></i>
+                <a data-l10n-id="m-i-c-left">向<b>左</b>插入&nbsp;1&nbsp;欄</a>
+            </li>
+            <!-- 向右插入1欄 -->
+            <li class="visible-sm visible-md visible-lg" id="apollo-menubar-insertcol-right">
+                <i data-icon="S"></i>
+                <a data-l10n-id="m-i-c-right">向<b>右</b>插入&nbsp;1&nbsp;欄</a>
+            </li>
+
+            <li class="visible-lg split"></li>
+
+            <!-- 備註 -->
+            <li class="visible-sm visible-md visible-lg" id="apollo-menubar-insert-note">
+                <i data-icon="T"></i>
+                <a data-l10n-id="m-i-note">備註</a>
+            </li>
+
+            <li class="visible-lg split"></li>
+
+            <!-- 函式 -->
+            <li class="visible-sm visible-md visible-lg">
+                <i class="fa fa-custom-math-sum"></i>
+                <a data-l10n-id="m-i-formula">函式</a>
+                <ul>
+                    <li><a id="apollo-menubar-insert-formulasum" data-l10n-id="m-i-f-sum">SUM</a></li>
+                    <li><a id="apollo-menubar-insert-formulaaverage" data-l10n-id="m-i-f-aver">AVERAGE</a></li>
+                    <li><a id="apollo-menubar-insert-formulacount" data-l10n-id="m-i-f-count">COUNT</a></li>
+                    <li><a id="apollo-menubar-insert-formulamax" data-l10n-id="m-i-f-max">MAX</a></li>
+                    <li><a id="apollo-menubar-insert-formulamin" data-l10n-id="m-i-f-min">MIN</a></li>
+                    <li><a id="apollo-menubar-insert-formulas" data-l10n-id="m-i-f-more">更多...</a></li>
+                </ul>
+            </li>
+
+            <li class="visible-lg split"></li>
+
+            <!-- 連結 -->
+            <li class="visible-sm visible-md visible-lg" id ="apollo-menubar-insert-link">
+                <i class="fa fa-link"></i>
+                <a data-l10n-id="m-i-link">連結</a>
+            </li> 
+            <li class="visible-lg split"></li>
+        </ul>
+
+        <!-- 格式 -->
+        <ul class="apollo-toolbar" id = "apollo-toolbar-format">
+            <!-- 字型 -->
+             <li class="hidden-xs"><a><span id="apollo-toolbar-font-family-format">Arial</span></a>
+                <ul class="apollo-font-family">
+                    <li><a style="font-family: arial;"><i class="fa fa-check"></i>Arial</a></li>
+                    <li><a style="font-family: 'Times New Roman';">Times New Roman</a></li>
+                    <li><a style="font-family: 'Courier New';">Courier New</a></li>
+                    <li><a style="font-family: Georgia;">Georgia</a></li>
+                    <li><a style="font-family: 'Trebuchet MS';">Trebuchet MS</a></li>
+                    <li><a style="font-family: Verdana;">Verdana</a></li>
+                    <li><a style="font-family: '新細明體';">新細明體</a></li>
+                    <li><a style="font-family: '細明體';">細明體</a></li>
+                </ul>
+            </li>
+            <li class="hidden-xs split"></li>
+            <!-- 字體大小 -->
+            <li class="hidden-xs"><a><span id="apollo-toolbar-font-size-format">8</span></a>
+                <ul class="apollo-font-size">
+                    <li><a>6</a></li>
+                    <li><a>7</a></li>
+                    <li><a>8</a></li>
+                    <li><a>9</a></li>
+                    <li><a>10</a></li>
+                    <li><a>11</a></li>
+                    <li><a>12</a></li>
+                    <li><a>14</a></li>
+                    <li><a>18</a></li>
+                    <li><a>24</a></li>
+                    <li><a>36</a></li>
+                </ul>
+            </li>
+            <li class="visible-lg split"></li>
+            <!-- 粗體 -->
+            <li class="visible-sm visible-md visible-lg apollo-bold" title="Ctrl+B">
+                <i class="glyphicon glyphicon-bold"></i>
+                <a data-l10n-id="m-f-bold" >粗體</a>
+            </li>
+            <!-- 斜體 -->
+            <li class="visible-sm visible-md visible-lg apollo-italic" title="Ctrl+I">
+                <i class="glyphicon glyphicon-italic"></i>
+                <a data-l10n-id="m-f-italic" >斜體</a>
+            </li>
+            <!-- 底線 -->
+            <li class="visible-sm visible-md visible-lg apollo-underline" title="Ctrl+U">
+                <i class="fa fa-underline"></i>
+                <a data-l10n-id="m-f-underline" >底線</a>
+            </li> 
+            <!-- 刪除線 -->
+            <li class="visible-sm visible-md visible-lg apollo-strike">
+                <i class="fa fa-strikethrough"></i>
+                <a data-l10n-id="m-f-strikethrough" >刪除線</a>
+            </li> 
+
+            <li class="visible-lg split"></li>
+
+            <!-- 對齊 -->
+            <li class="visible-sm visible-md visible-lg">
+                <i class="glyphicon glyphicon-align-left"></i>
+                <a data-l10n-id="m-f-align" >對齊</a>
+                <ul>
+                    <li><a class="apollo-menubar-align" id="apollo-menubar-align-left" data-l10n-id="m-f-a-left">靠左對齊</a></li>
+                    <li><a class="apollo-menubar-align" id="apollo-menubar-align-center" data-l10n-id="m-f-a-center">置中對齊</a></li>
+                    <li><a class="apollo-menubar-align" id="apollo-menubar-align-right" data-l10n-id="m-f-a-right">靠右對齊</a></li>
+                    <li class="split"></li>
+                    <li><a class="apollo-menubar-vertical" id="apollo-menubar-vertical-top" data-l10n-id="m-f-a-top">靠上對齊</a></li>
+                    <li><a class="apollo-menubar-vertical" id="apollo-menubar-vertical-middle" data-l10n-id="m-f-a-middle">中央對齊</a></li>
+                    <li><a class="apollo-menubar-vertical" id="apollo-menubar-vertical-bottom" data-l10n-id="m-f-a-bottom">靠下對齊</a></li>
+                </ul>
+            </li>
+            <!-- 合併儲存 -->
+            <li class="visible-sm visible-md visible-lg">
+                <i class="fa fa-square-o"></i>
+                <a data-l10n-id="m-f-merge">對齊</a>
+                <ul id="apollo-menubar-merge">
+                    <li><a class="apollo-merge-all" data-l10n-id="m-f-m-all">全部合併</a></li>
+                    <li><a class="apollo-merge-horizontal" data-l10n-id="m-f-m-h">水平合併</a></li>
+                    <li><a class="apollo-merge-vertical" data-l10n-id="m-f-m-v">垂直合併</a></li>
+                    <li><a class="apollo-unmerge" data-l10n-id="m-f-m-unmerge">取消合併</a></li>
+                </ul>
+            </li>
+            <!-- 文字換行 -->
+            <li class="visible-sm visible-md visible-lg">
+                <i data-icon="m"></i>
+                <a data-l10n-id="m-f-wrap">文字換行</a>
+                <ul id="apollo-menubar-textwrap">
+                    <li><a id="apollo-menubar-textwrap-clip" data-l10n-id="m-f-w-clip"><i class="fa fa-check"></i>自動裁剪</a></li>
+                    <li><a id="apollo-menubar-textwrap-wrap" data-l10n-id="m-f-w-wrap">自動換行</a></li>
+                </ul>
+            </li> 
+
+            <li class="visible-lg split"></li>
+
+            <!-- 清除格式 -->
+            <li class="visible-sm visible-md visible-lg" id ="apollo-menubar-clear-format">
+                <i data-icon="a"></i>
+                <a data-l10n-id="m-f-clearformatting">清除格式</a>
+            </li> 
+            <li class="visible-lg split"></li> 
+        </ul>
+
+        <!-- 說明 -->
+        <ul class="apollo-toolbar" id = "apollo-toolbar-help">
+            <!-- 鍵盤快捷鍵 -->
+            <li class="visible-sm visible-md visible-lg" id = "apollo-menubar-hotkey" title = "Ctrl+/">
+                <i class="fa fa-keyboard-o"></i>
+                <a data-l10n-id="m-h-keyboard">鍵盤快捷鍵</a>
+            </li>
+            
+            <li class="visible-lg split"></li>
+
+            <!-- 關於雲盤試算表 -->
+            <li class="visible-sm visible-md visible-lg" id = "apollo-menubar-about">
+                <i class="fa fa-info-circle"></i>
+                <a data-l10n-id="m-h-about">關於雲盤試算表</a>
+            </li>
+            <li class="visible-lg split"></li>
+        </ul>
+    </div>
+
+</section>

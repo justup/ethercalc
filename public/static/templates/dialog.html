@@ -1,0 +1,276 @@
+
+    <div id="apollo-confirm-dialog" class="apollo-dialog">
+        <div class="apollo-dialog-header">
+            <span id="apollo-confirm-dialog-title"></span>
+            <button class="apollo-dialog-close"></button>
+        </div>
+        <div id="apollo-confirm-dialog-message" class="apollo-dialog-content"></div>
+        <div class="apollo-dialog-footer">
+            <button class="dialog-confirm" data-l10n-id="d-btn-confirm">確定</button>
+            <button class="dialog-cancel" data-l10n-id="d-btn-cancel">取消</button>
+        </div>
+    </div>
+
+    <div id="apollo-alert-dialog" class="apollo-dialog">
+        <div class="apollo-dialog-header">
+            <span id="apollo-alert-dialog-title"></span>
+        </div>
+        <div id="apollo-alert-dialog-message" class="apollo-dialog-content"></div>
+        <div class="apollo-dialog-footer">
+            <button class="dialog-confirm" data-l10n-id="d-btn-confirm">確定</button>
+        </div>
+    </div>
+
+    <div id="apollo-filename-dialog" class="apollo-dialog">
+        <div class="apollo-dialog-header">
+            <span data-l10n-id="r-d-title">重新命名試算表</span>
+            <button class="apollo-dialog-close"></button>
+        </div>
+        <div class="apollo-dialog-content">
+            <label for="apollo-filename-field" data-l10n-id="r-d-in-label">輸入新的試算表名稱：</label><br /><br />
+            <input type="text" class="form-control" id="apollo-filename-field">
+        </div>
+        <div class="apollo-dialog-footer">
+            <button class="dialog-confirm" data-l10n-id="d-btn-confirm">確定</button>
+            <button class="dialog-cancel" data-l10n-id="d-btn-cancel">取消</button>
+        </div>
+    </div>
+
+    <div id="apollo-copy-dialog" class="apollo-dialog">
+        <div class="apollo-dialog-header">
+            <span data-l10n-id="d-c-title">複製文件</span>
+            <button class="apollo-dialog-close"></button>
+        </div>
+        <div class="apollo-dialog-content" data-l10n-id="d-c-desc">輸入新文件名稱：<br /><br />
+            <input type="text" class="form-control" id="apollo-copy-filename-field">
+        </div>
+        <div class="apollo-dialog-footer">
+            <button class="dialog-confirm" data-l10n-id="d-btn-confirm">確定</button>
+            <button class="dialog-cancel" data-l10n-id="d-btn-cancel">取消</button>
+        </div>
+    </div>
+
+    <div id="apollo-remove-dialog" class="apollo-dialog">
+        <div class="apollo-dialog-header">
+            <span  data-l10n-id="d-r-title">已將檔案移至垃圾桶</span>
+        </div>
+        <div class="apollo-dialog-content">
+            <p data-l10n-id="d-r-desc-0">如要存取這個檔案，請將其移出垃圾桶。</p>
+            <p data-l10n-id="d-r-desc-1">如果之前曾與他人共用這個檔案，協作者將無法存取檔案內容。</p>
+        </div>
+        <div class="apollo-dialog-footer">
+            <button class="dialog-confirm" data-l10n-id="d-r-back-drive">回到雲盤</button>
+            <button class="dialog-cancel" data-l10n-id="d-r-undo-remove">移出垃圾桶</button>
+        </div>
+    </div>
+
+    <div id="apollo-about-dialog" class="apollo-dialog">
+        <div class="apollo-dialog-header">
+            <div data-l10n-id="d-a-title">關於雲盤試算表</div>
+            <button class="apollo-dialog-close"></button>
+        </div>
+        <div class="apollo-dialog-content">
+            <div>
+                <div data-l10n-id="d-a-version">版本</div>
+                <span id="apollo-about-version"></span><span>&nbsp;&nbsp;(<a href="https://github.com/justup/ethercalc" target="_blank">GitHub</a>)</span>
+            </div>
+            <div>
+                <div data-l10n-id="d-a-language">界面語系</div>
+                <select id="apollo-about-change-lang">
+                    <option value="zh-TW" data-l10n-id="d-a-chinese">中文</option>
+                    <option value="en-US" data-l10n-id="d-a-english">English</option>
+                </select>
+            </div>
+        </div>
+        <div class="apollo-dialog-footer">
+            <button class="dialog-confirm" data-l10n-id="d-btn-confirm">確定</button>
+        </div>
+    </div>
+
+    <div id="apollo-password-dialog" class="apollo-dialog">
+        <div class="apollo-dialog-header">
+            <span>文件限制存取</span>
+        </div>
+        <div class="apollo-dialog-content">您輸入文件開啟密碼：<br /><br />
+            <input type="password" class="form-control" id="apollo-password-field">
+        </div>
+        <div class="apollo-dialog-footer">
+            <button class="dialog-confirm">開啟</button>
+        </div>
+    </div>
+
+    <div id="apollo-link-dialog-template" class="apollo-dialog">
+        <div class="apollo-dialog-content">
+            <div class="apollo-link-dialog-label">
+                <label data-l10n-id="l-d-text">文字</label>
+                <label data-l10n-id="l-d-link">連結</label>
+            </div>
+            <div class="apollo-link-dialog-input">
+                <input type="text" class="form-control" id="apollo-link-text-field" placeholder="輸入連結顯示文字" value="" data-l10n-id="l-d-in-text">
+                <input type="text" class="form-control" id="apollo-link-url-field" placeholder="輸入連結網址" value="" data-l10n-id="l-d-in-link">
+            </div>
+        </div>
+        <div class="apollo-dialog-footer apollo-link-dialog-footer">
+            <button id="apply-link-button" class="dialog-confirm" data-l10n-id="d-btn-apply">套用</button>
+        </div>
+    </div>
+
+    <div id="apollo-link-info-template" class="apollo-dialog">
+        <div class="apollo-dialog-content">
+            <span data-l10n-id="li-d-go">前往連結：</span>
+            <a id="apollo-link-info-url" target="_blank"></a>
+            <span> - </span>
+            <a id="apollo-link-info-change-info" data-l10n-id="li-d-change">變更</a>
+            <span> | </span>
+            <a id="apollo-link-info-remove-link" data-l10n-id="li-d-rm">移除</a>
+        </div>
+    </div>
+
+    <div id="apollo-search-and-replace-dialog-template" class="apollo-dialog">
+        <div class="apollo-dialog-header">
+            <span data-l10n-id="fr-d-title">尋找與取代</span>
+            <button class="apollo-dialog-close"></button>
+        </div>
+        <div class="apollo-dialog-content">
+            <table style="width: 90%;">
+                <tbody>
+                    <tr>
+                        <td><label data-l10n-id="fr-d-find">尋找</label></td>
+                        <td><input type="text" class="form-control" id="apollo-sr-search-input-field" /></td>
+                    </tr>
+                    <tr>
+                        <td><label data-l10n-id="fr-d-replacewith">取代為</label></td>
+                        <td><input type="text" class="form-control" id="apollo-sr-replace-input-field" /></td>
+                    </tr>
+                    <tr style="line-height: 20px;">
+                        <td></td>
+                        <td id="apollo-sr-search-condition-field">
+                            <div style="width: auto;">
+                                <input type="checkbox" id="apollo-sr-case-sensitive-check-field">
+                                <label data-l10n-id="fr-d-cond1">大小寫須相符</label>
+                            </div>
+                            <!-- <br> -->
+                            <div style="width: auto;">
+                                <input type="checkbox" id="apollo-sr-fit-all-content-check-field">
+                                <label data-l10n-id="fr-d-cond2">整個儲存格內容須相符</label>
+                            </div>
+                            <!-- <br> -->
+                            <div style="width: auto;">
+                                <input type="checkbox" id="apollo-sr-search-in-formula-check-field">
+                                <label data-l10n-id="fr-d-cond3">同時在公式中搜尋</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr style="line-height: 20px;">
+                        <td colspan="2">
+                            <span><b id="apollo-sr-message-field">&nbsp;</b></span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="apollo-dialog-footer">
+            <button class="dialog-search" id="apollo-sr-find-button" data-l10n-id="fr-d-find">尋找</button>
+            <button class="dialog-replace" id="apollo-sr-replace-button" data-l10n-id="fr-d-replace">取代</button>
+            <button class="dialog-replace-all" id="apollo-sr-replace-all-button" data-l10n-id="fr-d-replaceall">全部取代</button>
+            <button class="dialog-complete" id="apollo-sr-complete-button" data-l10n-id="fr-d-done">完成</button>
+        </div>
+    </div>
+
+    <div id="apollo-formula-dialog" class="apollo-dialog">
+        <div class="apollo-dialog-header">
+            <span data-l10n-id="f-d-flist">函式表</span>
+        </div>
+        <div class="apollo-dialog-content">
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td><span style="font-weight:bold" data-l10n-id="f-d-class">分類</span>
+                            <br>
+                            <select id="apollo-formula-dialog-content-functionclass" size="0" style="width:140px;">
+                            </select>
+                        </td>
+                        <td>&nbsp;&nbsp;</td>
+                        <td id="apollo-formula-dialog-content-functionlist">
+                            <span style="font-weight:bold" data-l10n-id="f-d-functions">函式</span>
+                            <br>
+                            <select id="apollo-formula-dialog-content-functionname" size="0" style="width:280px;">
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <div id="apollo-formula-dialog-content-functiondesc" style="width:100%;height:80px;overflow:auto;font-size:x-small;"></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+        <div class="apollo-dialog-footer">
+            <button class="dialog-confirm">插入</button>
+            <button class="dialog-cancel" data-l10n-id="d-btn-cancel">取消</button>
+        </div>
+    </div>
+
+    <div id="apollo-hotkey-info-dialog" class="apollo-dialog">
+        <div class="apollo-dialog-header">
+            <h4 data-l10n-id="hk-d-title">常用鍵盤快速鍵</h4>
+            <button class="apollo-dialog-close"></button>
+        </div>
+        <div id="apollo-hotkey-list"></div>
+    </div>
+
+    <div id="apollo-non-text-value-format-dialog" class="apollo-dialog">
+        <div class="apollo-dialog-header">
+            <h4>自訂數字格式</h4>
+            <button class="apollo-dialog-close"></button>
+        </div>
+        <div class="apollo-format-controller" style="margin-bottom: 15px;">
+            <div>
+                <input type="text" class="form-control" style="display: inline-block; width: 75%" id="apollo-non-text-value-format" placeholder="" value="">
+                <button data-l10n-id="d-btn-apply" class="dialog-confirm" id="apollo-non-text-value-format-confirm" style="width: 18%; height: 34px; display: inline-block; margin-left: 10px;">套用</button>
+            </div>
+            <table class="ntvf-sample">
+                <tbody>
+                    <tr>
+                        <td class="ntvf-sample-label">正數：</td>
+                        <td class="ntvf-sample-text" id="ntvf-positive-sample"></td>
+                    </tr>
+                    <tr>
+                        <td class="ntvf-sample-label">負數：</td>
+                        <td class="ntvf-sample-text" id="ntvf-negative-sample"></td>
+                    </tr>
+                    <!-- <tr style="display: none;">
+                        <td class="ntvf-sample-label">零：</td>
+                        <td class="ntvf-rendered-sample"></td>
+                    </tr>
+                    <tr style="display: none;">
+                        <td class="ntvf-sample-label">文字：</td>
+                        <td class="ntvf-rendered-sample"></td>
+                    </tr> -->
+                </tbody>
+            </table>
+        </div>
+        <div id="apollo-non-text-value-format-list"></div>
+    </div>
+
+    <div id="apollo-import-dialog" class="apollo-dialog">
+        <div class="apollo-dialog-header">
+            <h4>匯入檔案</h4>
+            <button class="apollo-dialog-close"></button>
+        </div>
+        <div class="apollo-dialog-content">
+            <table id='apollo-import-dialog-drop'>
+                <tr>
+                    <td>
+                        <div id='apollo-import-dialog-drop-title' style='font-size:20pt;padding:0 10px;'>將檔案拖曳至這裡</div>
+                        <div id='apollo-import-dialog-drop-note'>
+                            <div style='font-size:13px;padding:15px 0 5px;font-weight:bold;'>或者，您也可以...</div>
+                            <button id='apollo-import-dialog-select' class='dialog-button' style='line-height: 22px;font-weight:bold;'>從您的電腦中選取檔案</button>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>

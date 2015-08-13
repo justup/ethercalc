@@ -1,0 +1,9 @@
+{
+  "PORT_NODEJS": 8000,
+  "FILE_SYNC_TIME": 180000,
+  "SAS_HOSTNAME": "https://sas.9ifriend.com",
+  "DRIVE_HOSTNAME": "https://justup.co",
+  "DOCS_HOSTNAME": "https://docs.9ifriend.com:8000",
+  "SPREADSHEET_BACKUP_DIR": "../backup",
+  "SAS_API_VERSION": "v1"
+}

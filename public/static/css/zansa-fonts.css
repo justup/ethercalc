@@ -1,0 +1,243 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "zansa-font";
+  src:url("../fonts/zansa-font.eot");
+  src:url("../fonts/zansa-font.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/zansa-font.woff") format("woff"),
+    url("../fonts/zansa-font.ttf") format("truetype"),
+    url("../fonts/zansa-font.svg#zansa-font") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+[data-icon]:before {
+  position: relative;
+  font-family: "zansa-font" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  position: relative;
+  font-family: "zansa-font" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-icon01:before {
+  content: "b";
+}
+.icon-icon52:before {
+  content: "a";
+}
+.icon-icon02:before {
+  content: "c";
+}
+.icon-icon03:before {
+  content: "d";
+}
+.icon-icon04:before {
+  content: "e";
+}
+.icon-icon06:before {
+  content: "f";
+}
+.icon-icon05:before {
+  content: "g";
+}
+.icon-icon07:before {
+  content: "h";
+}
+.icon-icon14:before {
+  content: "i";
+}
+.icon-icon15:before {
+  content: "j";
+}
+.icon-icon27:before {
+  content: "k";
+}
+.icon-icon28:before {
+  content: "l";
+}
+.icon-icon40:before {
+  content: "m";
+}
+.icon-icon42:before {
+  content: "n";
+}
+.icon-icon41:before {
+  content: "o";
+}
+.icon-icon43:before {
+  content: "p";
+}
+.icon-icon29:before {
+  content: "q";
+}
+.icon-icon30:before {
+  content: "r";
+}
+.icon-icon16:before {
+  content: "s";
+}
+.icon-icon17:before {
+  content: "t";
+}
+.icon-icon18:before {
+  content: "u";
+}
+.icon-icon19:before {
+  content: "v";
+}
+.icon-icon31:before {
+  content: "w";
+}
+.icon-icon32:before {
+  content: "x";
+}
+.icon-icon44:before {
+  content: "y";
+}
+.icon-icon45:before {
+  content: "z";
+}
+.icon-icon46:before {
+  content: "A";
+}
+.icon-icon48:before {
+  content: "B";
+}
+.icon-icon47:before {
+  content: "C";
+}
+.icon-icon33:before {
+  content: "D";
+}
+.icon-icon34:before {
+  content: "E";
+}
+.icon-icon20:before {
+  content: "F";
+}
+.icon-icon21:before {
+  content: "G";
+}
+.icon-icon08:before {
+  content: "H";
+}
+.icon-icon09:before {
+  content: "I";
+}
+.icon-icon22:before {
+  content: "J";
+}
+.icon-icon23:before {
+  content: "K";
+}
+.icon-icon10:before {
+  content: "L";
+}
+.icon-icon11:before {
+  content: "M";
+}
+.icon-icon12:before {
+  content: "N";
+}
+.icon-icon13:before {
+  content: "O";
+}
+.icon-icon26:before {
+  content: "P";
+}
+.icon-icon25:before {
+  content: "Q";
+}
+.icon-icon24:before {
+  content: "R";
+}
+.icon-icon38:before {
+  content: "S";
+}
+.icon-icon39:before {
+  content: "T";
+}
+.icon-icon51:before {
+  content: "U";
+}
+.icon-icon50:before {
+  content: "V";
+}
+.icon-icon37:before {
+  content: "W";
+}
+.icon-icon36:before {
+  content: "X";
+}
+.icon-icon49:before {
+  content: "Y";
+}
+.icon-icon35:before {
+  content: "Z";
+}
+.icon-icon:before {
+  content: "0";
+}
+.icon-list-icon:before {
+  content: "1";
+}
+.icon-share-icon:before {
+  content: "2";
+}
+.icon-icon-1:before {
+  content: "3";
+}
+.icon-icon-2:before {
+  content: "4";
+}
+.icon-icon-3:before {
+  content: "5";
+}
+.icon-icon-4:before {
+  content: "6";
+}
+.icon-icon-5:before {
+  content: "7";
+}
+.icon-delete-icon:before {
+  content: "8";
+}
+.icon-download-icon:before {
+  content: "9";
+}
+.icon-add-icon:before {
+  content: "!";
+}
+.icon-icon53:before {
+  content: "\"";
+}
+.icon-icon57:before {
+  content: "#";
+}
+.icon-icon54:before {
+  content: "$";
+}
+.icon-icon55:before {
+  content: "%";
+}
+.icon-icon56:before {
+  content: "&";
+}

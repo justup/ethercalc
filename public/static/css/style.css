@@ -1,0 +1,983 @@
+    /*
+  Apollo 不重用(共用)元件相關的 Style 放置處
+*/
+body {
+    color: black;
+    font: normal 13px arial,sans-serif;
+    margin: 0px;
+}
+.sheet-topbar {
+    /*position: fixed;*/
+    background-color: #FEFEFE;
+    z-index: 1;
+    width: 100%;
+}
+.sheet-topbar * {
+    -webkit-user-select: none;
+}
+
+[data-icon]{
+  position: relative;
+  top:2px;
+  font-size: 17px;
+}
+
+.apollo-bigger-data-icon-temp{
+    font-size: 22px;
+}
+
+/*disable topbar style*/
+#apollo-topbar.disabled > #apollo-title-block,
+#apollo-topbar.disabled > #apollo-menubar-block,
+#apollo-topbar.disabled > #apollo-toolbar-block{
+    opacity: 0.5;
+}
+#apollo-topbar.disabled > #apollo-title-block *,
+#apollo-topbar.disabled > #apollo-menubar-block *,
+#apollo-topbar.disabled > #apollo-toolbar-block *,
+#apollo-topbar.disabled #apollo-title-button {
+    cursor: not-allowed;
+}
+#apollo-topbar.disabled *:hover,
+#apollo-topbar.disabled #apollo-title-button:hover {
+    border-color: transparent;
+    background-color: transparent;
+}
+#apollo-topbar.disabled #apollo-logo-block:hover {
+    background-color: #0F9D58;
+}
+
+
+
+#apollo-logo-block {
+    background-color: #0F9D58;
+    width: 40px;
+    height: 60px;
+    position: absolute;
+    text-align: center;
+}
+#apollo-logo-block div {
+    display: inline-block;
+    height: 60px;
+    width: 40px;
+    color: white;
+    font-size: 24px;
+    line-height: 60px;
+}
+
+#apollo-title-block {
+    padding-left: 53px;
+    padding-top: 7px;
+    /*margin-right: 120px;*/
+    background:#DFF2F0;
+    height: 50px;
+    padding-top: 10px;
+}
+#apollo-title-block > #apollo-title-button {
+    color: #333;
+    font-size: 18px;
+    max-width: 600px;
+    padding: 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    text-decoration: none;
+}
+#apollo-title-block > #apollo-title-button:hover {
+    background-color: #51CDC2;
+}
+#apollo-title-block > #apollo-move-file-btn,
+#apollo-title-block > #apollo-favorite-btn {
+    display: none;
+    /*color: #aaa;*/
+    color: #26A59A;
+    border-right:1px solid #A5A5A5;
+    padding-right:10px; 
+    font-size: 20px;
+    margin: 0 4px;
+    cursor: pointer;
+}
+#apollo-title-block > #apollo-move-file-btn:hover,
+#apollo-title-block > #apollo-favorite-btn:hover {
+    color: #51CDC2;
+}
+#apollo-title-block > #apollo-favorite-btn > i.fa.fa-star {
+    text-shadow: 0px 0px 1px #888;
+    color: #FFC233;
+}
+
+#apollo-title-block > .on-line-panel {
+    float: right;
+    margin-right: 20px;
+}
+
+
+#apollo-title-block > .on-line-panel {
+    float: right;
+    margin-right: 20px;
+}
+
+#apollo-title-block > .on-line-panel > #current-online-user-container > {
+    display: inline-block;
+}
+
+#apollo-title-block > .on-line-panel > #current-online-user-container > .online-user-photo{
+    width: 30px;
+    height: 30px;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    top: -6px;
+    margin: 0px 5px;
+    background: #000;
+}   
+
+
+#apollo-button-block {
+    float: right;
+    /*padding-left: 0px , 10px;*/
+    border-left: 1px solid #A5A5A5;
+    /*padding: 16px;*/
+}
+#apollo-button-login, #apollo-button-logout {
+    display: none;
+}
+#apollo-button-block button.dialog-confirm {
+    background-color: #4d90fe;
+    background-image: -webkit-linear-gradient(top, #4d90fe, #4787ed);
+    background-image: -moz-linear-gradient(top, #4d90fe, #4787ed);
+    background-image: -ms-linear-gradient(top, #4d90fe, #4787ed);
+    background-image: -o-linear-gradient(top, #4d90fe, #4787ed);
+    background-image: linear-gradient(top, #4d90fe, #4787ed);
+    border: 1px solid #3079ed;
+    color: #fff;
+    height: 29px;
+    font-size: 11px;
+    line-height: 27px;
+    margin: 0 16px 0 0;
+    min-width: 72px;
+    padding: 0 8px;
+    font-weight: bold;
+    border-radius: 2px
+}
+
+#apollo-button-block button.dialog-confirm-simple {
+    background-color: transparent;
+    border: none;
+    color: #000;
+    font-size: 11px;
+    margin: 0 16px 0 0;
+    min-width: 72px;
+    padding: 0 8px;
+    border-radius: 2px
+}
+
+#apollo-button-logout:hover , #apollo-button-login:hover{
+    color: #51CDC2 !important;
+}
+
+
+#SocialCalc-statusline {
+    position: relative;
+    /*width: 15%;*/
+    width: 16%;
+    height: 21px !important;
+    /*line-height: 21px;*/
+    padding-right: 20px !important;
+    text-align: center;
+    vertical-align: sub;
+    display: inline-block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+}
+
+#apollo-inputbar-block {
+    position: absolute;
+    width: 85%;
+    height: 21px;
+    padding-left: 18px;
+/*    padding-top: 3px;
+    padding-bottom: 3px;*/
+    top: 0;
+    right: 0;
+    background: rgb(219, 219, 219);
+    border-radius: 10px 0 0px 10px;
+    border: 1px solid rgb(176, 176, 176);
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#apollo-inputbar-block:before {
+    position: absolute;
+    content: '';
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    margin-left: -64px;
+    margin-top: 6px;
+    background: #BBBBBB;
+    background: -moz-linear-gradient(top, #BBBBBB 0%, #ffffff 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#BBBBBB), color-stop(100%,#ffffff));
+    background: -webkit-linear-gradient(top, #BBBBBB 0%,#ffffff 100%);
+    background: -o-linear-gradient(top, #BBBBBB 0%,#ffffff 100%);
+    background: -ms-linear-gradient(top, #BBBBBB 0%,#ffffff 100%);
+    background: linear-gradient(to bottom, #BBBBBB 0%,#ffffff 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#BBBBBB', endColorstr='#ffffff',GradientType=0 );
+}
+
+#apollo-inputbar-access, 
+#apollo-inputbar-cancel, 
+#apollo-inputbar-icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 2px;
+    float: left;
+}
+
+#apollo-inputbar-cancel:before {
+    content: '✗';
+}
+
+#apollo-inputbar-access:before {
+    content: '✓';
+}
+
+#apollo-inputbar-icon {
+    margin: 2px 5px;
+}
+
+#apollo-inputbar-icon:before {
+    content: 'fx';
+    color: #909090;
+    font-style: italic;
+    font-size: 14px;
+}
+
+#apollo-inputbar-block input {
+    border: none;
+    border-left: 2px solid #d0d0d0;
+    width: 90%;
+    padding-left: 10px;
+    height: 16px;
+    vertical-align: middle;
+    margin-top: 2px;
+}
+#apollo-inputbar-block input:focus {
+    border: none;
+    border-left: 2px solid #d0d0d0;
+    outline: 0;
+}
+/*#apollo-inputbar-block:before {
+    content: 'fx';
+    margin-right: 18px;
+    color: #909090;
+    font-style: italic;
+    font-size: 14px;
+}*/
+.basic-tabs.basic-tabs-strip {
+    /*height: 55px;*/
+    height: 40px;
+    background-color: #DFF2F0;
+    bottom: 0;
+}
+li.basic-tabs-item-title {
+    position: relative;
+    background-color: transparent;
+/*    height: 55px;
+    line-height: 55px;*/
+    height: 40px;
+    line-height: 40px;    
+    margin-top: 0 !important;
+    border: none;
+    border-right: 1px solid rgba(124, 167, 160, 0.19);
+    font-size: 14px;
+}
+/*li.basic-tabs-item-title:before {
+    position: absolute;
+    font-family: "zansa-font" !important;
+    content: 'D';
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    speak: none;
+    line-height: 1;
+    top: 0;
+    right: 2px;    
+    color: gray;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}*/
+li.basic-tabs-item-title a {
+    display: inherit;
+}
+li.basic-tabs-item-title.active {
+    background-color: #26A59A;
+}
+div.buttons {
+    /*height: 55px;*/
+    height: 40px;    
+    background-color: #DFF2F0;
+    /*position: relative !important; */
+    /*bottom: 1px;*/
+    bottom: 0;
+    text-align: left;
+    display: inline-block;  
+}
+div.buttons button {
+    /*opacity: .5;*/
+    border: none;
+    border-right: 1px solid rgba(124, 167, 160, 0.19);
+    background: transparent;
+/*    height: 55px;*/
+    height: 40px;
+}
+div.buttons button:hover {
+    border: none;
+    border-right: 1px solid rgba(124, 167, 160, 0.19);
+    background: #eee;
+
+}
+.buttons button:nth-child(1):before {
+    font-family: "zansa-font" !important;
+    content: 'k';
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    speak: none;
+    line-height: 1;
+    font-size: 22px;
+    vertical-align: middle;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;    
+}
+/*.buttons button:nth-child(2) {
+    opacity: .2;
+}
+.buttons button:nth-child(3) {
+    opacity: .2;
+}*/
+
+/* 複寫 ethercalc style */
+#te_fullgrid tr:nth-child(2) td:nth-child(1) {
+    border: 1px solid #C0C0C0;
+    background-color: #F3F3F3;
+    background-image: none;
+    cursor: default;
+}
+#te_fullgrid tr:nth-child(2) td:nth-child(1):hover {
+    border: 1px solid #C0C0C0;
+}
+#te_logo {
+    background-image: none;
+    background-color: #F8F8F8;
+}
+#te_logo div {
+    border: 1px solid #d9d9d9;
+    width: 20px;
+    height: 20px;
+    background-color: #EEEEEE;
+}
+#tableeditor {
+    -webkit-user-select: none;
+}
+#te_scrollareah, #te_scrollareav {
+    background-color: #eeeeee;
+    border: 1px solid #ccc;
+}
+ul.apollo-menubar > li li a{
+    color: #555;
+}
+
+/* Screen overlay */
+#screen-overlay {
+    z-index: 1000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+/* Merge Alert (Confirm) dialog. */
+.apollo-dialog * {
+    -webkit-user-select: none;
+}
+.apollo-dialog {
+    position: absolute;
+    width: 512px;
+    padding: 30px 42px;
+    background: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(0,0,0,0.333);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    display: none;
+}
+.apollo-dialog label {
+    font: normal 13px arial,sans-serif;
+}
+
+.apollo-dialog .apollo-dialog-header {
+    margin: 0 0 16px;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 24px;
+}
+
+.apollo-dialog .apollo-dialog-content {
+    line-height: 16px;
+    word-wrap: break-word;
+}
+
+.apollo-dialog .apollo-dialog-footer {
+    margin-top: 16px;
+}
+
+.apollo-dialog .apollo-dialog-footer button {
+    height: 29px;
+    font-size: 11px;
+    line-height: 27px;
+    margin: 0 16px 0 0;
+    min-width: 72px;
+    padding: 0 8px;
+    font-weight: bold;
+    border-radius: 2px
+}
+
+.apollo-dialog .apollo-dialog-footer button.dialog-confirm,
+.apollo-dialog .apollo-dialog-content button.dialog-button,
+.apollo-dialog .apollo-format-controller button.dialog-confirm {
+    background-color: #4d90fe;
+    background-image: -webkit-linear-gradient(top, #4d90fe, #4787ed);
+    background-image: -moz-linear-gradient(top, #4d90fe, #4787ed);
+    background-image: -ms-linear-gradient(top, #4d90fe, #4787ed);
+    background-image: -o-linear-gradient(top, #4d90fe, #4787ed);
+    background-image: linear-gradient(top, #4d90fe, #4787ed);
+    border: 1px solid #3079ed;
+    color: #fff;
+}
+
+.apollo-dialog .apollo-dialog-footer button,
+.apollo-dialog .apollo-dialog-footer button.dialog-cancel {
+    background-color: #f5f5f5;
+    background-image: -webkit-linear-gradient(top, #f5f5f5, #f1f1f1);
+    background-image: -moz-linear-gradient(top, #f5f5f5, #f1f1f1);
+    background-image: -ms-linear-gradient(top, #f5f5f5, #f1f1f1);
+    background-image: -o-linear-gradient(top, #f5f5f5, #f1f1f1);
+    background-image: linear-gradient(top, #f5f5f5, #f1f1f1);
+    border: 1px solid #dcdcdc;
+    color: #333;
+}
+
+.apollo-dialog .apollo-dialog-footer button[disabled] {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    background: #fff;
+    background-image: none;
+    border: 1px solid #f3f3f3;
+    border: 1px solid rgba(0,0,0,0.05);
+    color: #b8b8b8;
+}
+
+.apollo-dialog .apollo-dialog-close {
+    position: absolute;
+    right: 24px;
+    top: 24px;
+    color: #999;
+    border: none;
+    background: transparent;
+}
+.apollo-dialog .apollo-dialog-close:hover {
+    color: #555;
+}
+.apollo-dialog .apollo-dialog-close:before {
+    content: "\e014";
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.palette-container tr > td {
+    height: 16px;
+    width: 16px;
+    outline: 1px solid transparent;
+    cursor: pointer;
+    margin: 0;
+    position: relative;
+}
+
+.palette-container tr > td > div {
+    position: relative;
+    left: 1px;
+    width: 14px;
+    height: 14px;
+    font-weight: bold;
+    font-size: 13px;
+    text-shadow: -2px 0 #FFF, 0 2px #FFF, 2px 0 #FFF, 0 -2px #FFF;
+}
+
+.palette-container tr > td:hover {
+    outline: 1px solid rgb(0, 0, 0);
+}
+
+.palette-container > div {
+    padding: 3px;
+}
+
+.palette-container tr > td.selected {
+    outline: 1px solid rgba(0, 0, 0, 1);
+}
+
+.palette-container > div.palette-reset-div tr > td {
+    height: inherit;
+    width: inherit;
+}
+
+.palette-container > div.palette-reset-div tr > td > div {
+    width: 100%;
+    text-shadow: inherit;
+}
+
+.palette-container > div.palette-reset-div tr > td:hover {
+    outline: 1px solid transparent;
+}
+
+.palette-container > div.palette-reset-div {
+    cursor: pointer;
+    color: #333333;
+}
+
+.palette-container > div.palette-reset-div:hover {
+    background-color: rgba(220, 220, 220, 0.5);
+}
+
+.palette-container > div.palette-reset-div tr > td.palette-reset-td > div:before {
+    content: "";
+    display: block;
+    background: url('../img/web/format_color_reset.svg') no-repeat;
+    background-size: contain;
+    width: 14px;
+    height: 14px;
+    float: left;
+    margin: 0 6px 0 0;
+}
+
+div.apollo-link-dialog-label {
+    float: left;
+}
+
+div.apollo-link-dialog-label > label {
+    display: block;
+    height: 13px;
+    padding: 8px 0px;
+}
+
+div.apollo-link-dialog-label > label:first-child {
+    margin-bottom: 18px;
+}
+
+div.apollo-link-dialog-input {
+    float: left;
+    margin-left: 10px;
+    width: 65%;
+}
+
+div.apollo-link-dialog-footer {
+    float: right;
+    position: relative;
+    top: 21px;
+    left: 10px;
+}
+
+div.apollo-link-dialog {
+    z-index: 20;
+    padding: 10px 15px;
+    width: 408px;
+    height: 90px;
+}
+
+div.apollo-link-info {
+    z-index: 20;
+    padding: 14px 15px;
+    max-width: 400px;
+    width: auto;
+    height: auto;
+}
+
+a#apollo-link-info-url {
+    display: inline-block;
+    max-width: 215px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+div.apollo-search-and-replace-dialog {
+    width: auto;
+    height: auto;
+}
+
+div.apollo-search-and-replace-dialog label {
+    display: inline;
+    font-weight: inherit;
+}
+
+/*div.apollo-search-and-replace-dialog td {
+    padding-right: 15px;
+}
+*/
+
+
+/*loading screen*/
+#init-ldg {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    margin-left: -50px;
+    margin-top: -50px;
+    left: 50%;
+    top: 50%;
+}
+#init-ldg-container1 > div, #init-ldg-container2 > div, #init-ldg-container3 > div {
+    width: 15px;
+    height: 15px;
+    background-color: #00a1de;
+    border-radius: 100%;
+    position: absolute;
+    -webkit-animation: bouncedelay 1.2s infinite ease-in-out;
+    animation: bouncedelay 1.2s infinite ease-in-out;
+    /* Prevent first frame from flickering when animation starts */
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+.init-ldg-spinner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+#init-ldg-container2 {
+    -webkit-transform: rotateZ(45deg);
+    transform: rotateZ(45deg);
+}
+#init-ldg-container3 {
+    -webkit-transform: rotateZ(90deg);
+    transform: rotateZ(90deg);
+}
+.init-ldg-circle1 {
+    top: 0;
+    left: 0;
+}
+.init-ldg-circle2 {
+    top: 0;
+    right: 0;
+}
+.init-ldg-circle3 {
+    right: 0;
+    bottom: 0;
+}
+.init-ldg-circle4 {
+    left: 0;
+    bottom: 0;
+}
+#init-ldg-container2 .init-ldg-circle1 {
+    -webkit-animation-delay: -1.1s;
+    animation-delay: -1.1s;
+}
+#init-ldg-container3 .init-ldg-circle1 {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+}
+#init-ldg-container1 .init-ldg-circle2 {
+    -webkit-animation-delay: -0.9s;
+    animation-delay: -0.9s;
+}
+#init-ldg-container2 .init-ldg-circle2 {
+    -webkit-animation-delay: -0.8s;
+    animation-delay: -0.8s;
+}
+#init-ldg-container3 .init-ldg-circle2 {
+    -webkit-animation-delay: -0.7s;
+    animation-delay: -0.7s;
+}
+#init-ldg-container1 .init-ldg-circle3 {
+    -webkit-animation-delay: -0.6s;
+    animation-delay: -0.6s;
+}
+#init-ldg-container2 .init-ldg-circle3 {
+    -webkit-animation-delay: -0.5s;
+    animation-delay: -0.5s;
+}
+
+#init-ldg-container3 .init-ldg-circle3 {
+    -webkit-animation-delay: -0.4s;
+    animation-delay: -0.4s;
+}
+#init-ldg-container1 .init-ldg-circle4 {
+    -webkit-animation-delay: -0.3s;
+    animation-delay: -0.3s;
+}
+#init-ldg-container2 .init-ldg-circle4 {
+    -webkit-animation-delay: -0.2s;
+    animation-delay: -0.2s;
+}
+#init-ldg-container3 .init-ldg-circle4 {
+    -webkit-animation-delay: -0.1s;
+    animation-delay: -0.1s;
+}
+@-webkit-keyframes bouncedelay {
+    0%, 80%, 100% {
+        -webkit-transform: scale(0);
+    }
+    40% {
+        -webkit-transform: scale(1);
+    }
+}
+@keyframes bouncedelay {
+    0%, 80%, 100% {
+        transform: scale(0);
+        -webkit-transform: scale(0);
+    }
+    40% {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+    }
+}
+
+div[contentEditable="true"] {
+    cursor: text;
+}
+
+#inputecho-prompt {
+    filter:alpha(opacity=90);
+    opacity: 1.0;
+    width: 330px;
+    background-color: #FFFFFF;
+    -webkit-box-shadow: 0 2px 5px gray;
+    -moz-box-shadow: 0 2px 5px gray;
+    box-shadow: 0 2px 5px gray;
+}
+
+#te_inputecho {
+    background-color: #FFFFFF;
+    -webkit-box-shadow: 0 2px 5px gray;
+    -moz-box-shadow: 0 2px 5px gray;
+    box-shadow: 0 2px 5px gray;
+    outline: none;
+}
+
+/* Select Mask */
+#apollo-select-mask {
+    border: 1px solid #4285F4;
+    background-color: #ECF3FF;
+    opacity: 0.35;
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    left: 0px;
+    top: 0px;
+    z-index: 8;
+}
+#apollo-select-mask-border {
+    border: 2px solid #4285F4;
+    background: transparent;
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    left: 0px;
+    top: 0px;
+    z-index: 9;
+}
+
+
+/*HotKey Dialog*/
+#apollo-hotkey-info-dialog {
+    width: 680px;
+    height: 540px;
+}
+#apollo-hotkey-list {
+    width: 100%;
+    height: 420px;
+    padding: 0px;
+    overflow: auto;
+    padding-right: 6px;
+}
+#apollo-hotkey-list::-webkit-scrollbar-button {
+    height: 0;
+    width: 0;
+}
+#apollo-hotkey-list::-webkit-scrollbar-track {
+    background-clip: padding-box;
+    border: solid transparent;
+    border-width: 0 0 0 4px;
+}
+#apollo-hotkey-list::-webkit-scrollbar-corner element,
+#apollo-hotkey-list::-webkit-scrollbar-corner {
+    background: transparent;
+}
+#apollo-hotkey-list::-webkit-scrollbar element,
+#apollo-hotkey-list::-webkit-scrollbar {
+    height: 16px;
+    overflow: visible;
+    width: 16px;
+}
+#apollo-hotkey-list::-webkit-scrollbar-thumb element,
+#apollo-hotkey-list::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,.2);
+    background-clip: padding-box;
+    border: solid transparent;
+    border-width: 1px 1px 1px 6px;
+    min-height: 28px;
+    padding: 100px 0 0;
+    box-shadow: inset 1px 1px 0 rgba(0,0,0,.1),inset 0 -1px 0 rgba(0,0,0,.07);
+}
+#apollo-hotkey-list p {
+    font-weight: bold;
+    font-size: 13px;
+}
+#apollo-hotkey-list ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+#apollo-hotkey-list li {
+    color: #929292;
+    position: relative;
+    border-bottom: 1px solid #ccc;
+    line-height: 32px;
+    font-size: 13px;
+    white-space: nowrap;
+}
+#apollo-hotkey-list li > span {
+    color: #212121;
+    position: absolute;
+    right: 0px;
+    width: 50%;
+    font-weight: bold;
+}
+
+/* Non-text Value Format Dialog */
+#apollo-non-text-value-format-dialog {
+}
+#apollo-non-text-value-format-list {
+    height: 400px;
+    padding: 0px;
+    overflow: auto;
+    padding-right: 6px;
+}
+#apollo-non-text-value-format-list::-webkit-scrollbar-button {
+    height: 0;
+    width: 0;
+}
+#apollo-non-text-value-format-list::-webkit-scrollbar-track {
+    background-clip: padding-box;
+    border: solid transparent;
+    border-width: 0 0 0 4px;
+}
+#apollo-non-text-value-format-list::-webkit-scrollbar-corner element,
+#apollo-non-text-value-format-list::-webkit-scrollbar-corner {
+    background: transparent;
+}
+#apollo-non-text-value-format-list::-webkit-scrollbar element,
+#apollo-non-text-value-format-list::-webkit-scrollbar {
+    height: 16px;
+    overflow: visible;
+    width: 16px;
+}
+#apollo-non-text-value-format-list::-webkit-scrollbar-thumb element,
+#apollo-non-text-value-format-list::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,.2);
+    background-clip: padding-box;
+    border: solid transparent;
+    border-width: 1px 1px 1px 6px;
+    min-height: 28px;
+    padding: 100px 0 0;
+    box-shadow: inset 1px 1px 0 rgba(0,0,0,.1),inset 0 -1px 0 rgba(0,0,0,.07);
+}
+#apollo-non-text-value-format-list p {
+    font-weight: bold;
+    font-size: 13px;
+}
+#apollo-non-text-value-format-list ul {
+    list-style: none;
+    list-style-type: none;
+    padding-left: 0;
+    cursor: pointer;
+}
+#apollo-non-text-value-format-list ul > li {
+    border-bottom: 1px solid #e5e5e5;
+    border-left: 1px solid transparent;
+    font-size: 15px;
+    padding: 16px;
+    position: relative;
+}
+#apollo-non-text-value-format-list ul > li:hover {
+    background-color: rgba(220, 220, 220, 0.6);
+}
+#apollo-non-text-value-format-list ul > li > div.ntvf-format {
+    display: inline-block;
+}
+
+#apollo-non-text-value-format-list ul > li > div.ntvf-sample {
+    color: #777;
+    display: inline-block;
+    position: absolute;
+    right: 20px;
+}
+
+.ntvf-sample-label {
+    color: #777;
+    padding-left: 0;
+    padding-right: 5px;
+}
+
+
+#apollo-import-dialog-drop {
+    width:100%;
+    height:200px;
+    border-style: dashed;
+    border-color: gainsboro;
+    text-align:center;
+}
+
+#apollo-import-dialog-drop td {
+    color:#ccc;
+}
+
+/* apollo-about-dialog */
+#apollo-about-dialog .apollo-dialog-content div {
+    line-height: 20px;
+}
+#apollo-about-dialog .apollo-dialog-content div > div{
+    width: 50%;
+    float: left;
+    font-size: 16px;
+}
+#apollo-about-dialog > .apollo-dialog-content {
+    padding: 20px;
+}
+
+
+
+/* override bootstrap input margin */
+.form-control {
+    height: 30px;
+}
+input.form-control {
+    margin: 2px;
+}

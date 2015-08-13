@@ -1,0 +1,82 @@
+.ctx-menu,.ctx-menu * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+         box-sizing: border-box;
+}
+.ctx-menu {
+    position: absolute;
+    height: auto;
+    display: none;
+    z-index: 30;
+    padding: 6px 0;
+
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+
+    -webkit-user-select:none;
+
+     -webkit-box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+
+    background: #fff;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0,0,0,.2);
+    cursor: default;
+    margin: 0;
+    outline: none;
+}
+
+/* menu separator */
+.ctx-menu .cm-sep {
+    border-top: 1px solid #ebebeb;
+    margin: 3px 0;
+}
+
+/* menu item */
+.ctx-menu .cm-item {
+    width: 100%;
+    padding: 6px 6rem 6px 16px;
+    cursor: pointer;
+    margin: 0;
+    white-space: nowrap;
+}
+.ctx-menu .cm-item, .ctx-menu .cm-item a {color: #333;}
+.ctx-menu .cm-item.disabled,  .ctx-menu .cm-item.disabled a {color: #ccc;}
+
+.ctx-menu .cm-item a { display: block; font-size: 1.3rem;}
+.ctx-menu .cm-item a:hover, .ctx-menu .cm-item a:focus { text-decoration: none; }
+
+.ctx-menu .cm-item:hover {
+    background-color: #eee;
+    border-color: #eee;
+    border-style: dotted;
+    border-width: 1px 0;
+    padding-top: 5px;
+    padding-bottom: 5px
+}
+.ctx-menu .cm-item.disabled,
+.ctx-menu .cm-item.disabled:hover {
+    cursor: default;
+    background: #fff;
+    border: none;
+    padding: 6px 6rem 6px 16px;
+}
+.ctx-menu .cm-item[data-msub] a::after {
+    content: '';
+    position: absolute;
+    width: 0; height: 0;
+    border: 5px solid transparent;
+    border-left-color: #333;
+    right: 0;
+    margin-top: 3px;
+    opacity: .6;
+    filter: alpha(opacity=60);
+}
+.ctx-menu .cm-item[data-msub]:hover a::after {
+    border-left-color: #000;
+}
+.ctx-menu .cm-item[data-msub].disabled a::after {
+    border-left-color: #ccc;
+}
